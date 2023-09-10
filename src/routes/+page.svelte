@@ -3,6 +3,9 @@
     import typewriter from '$lib/components/typewriter.ts';
     import Scene from './Scene.svelte';
     import placeholder from '$lib/images/focal.webp';
+    import CES from '$lib/images/CESPhoto.jpg';
+    import Website from '$lib/images/BlogCeption.png';
+    import touchpad from '$lib/images/touchpad.png';
 	import Card from '../lib/components/Card.svelte';
 
     let elem;
@@ -43,13 +46,13 @@
                     Charlie Du
                 </h1>
                 <!-- Fix text wrapping -->
-                <p class="text-black font-sans font-semibold text-2xl">
+                <!-- <p class="text-black font-sans font-semibold text-2xl">
                     CG Software Developer.  Problem Solver.  Visionary.
-                </p>
+                </p> -->
                 <!-- Figure out better way to anchor right -->
-                <a href="/About" class="text-slate-800 float-right font-sans font-medium">
+                <!-- <a href="/About" class="text-slate-800 float-right font-sans font-medium">
                     Learn More -&gt
-                </a>
+                </a> -->
                 <!-- Ew cringe -->
             </div>
         </div>
@@ -63,10 +66,13 @@
             Check out some of my projects.
         </h1>
 
-        <div class="flex justify-between pt-10">
-            <Card imgsrc={placeholder} headertext={"CES 2023"}/>
-            <Card imgsrc={placeholder}/>
-            <Card imgsrc={placeholder}/>
+        <div class="w-full pt-6 flex flex-wrap justify-center items-center">
+            <!-- <img src={placeholder} class="w-20 m-4"/>
+            <img src={placeholder} class="w-20 m-4"/>
+            <img src={placeholder} class="w-20 m-4"/> -->
+            <Card imgsrc={CES} headertext={"CES 2023"} desctext={"An interactive boating simulator built for CES 2023"} href={"/About"}/>
+            <Card imgsrc={Website} headertext={"Portolio Website"} desctext={"This website which serves as my portfolio"} href={"/About"}/>
+            <Card imgsrc={touchpad} headertext={"Touchpad Writing"} desctext={"An app to use a laptop touchpad as a drawing tablet"} href={"/About"}/>
         </div>
 
 

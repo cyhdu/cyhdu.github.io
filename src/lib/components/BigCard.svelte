@@ -7,7 +7,7 @@
 </script>
 
 
-<div class="px-14 py-10 max-w-7xl">
+<div class="px-3 py-6 max-w-7xl">
 
     <a href="#" class="smcard w-full h-full mx-auto flex flex-row items-center rounded-lg">
 

@@ -14,10 +14,10 @@
                 <a href="https://github.com/cyhdu" class="flex justify-center w-12 h-12">
                     <img src={github} alt="GitHub" class="w-8 hover:w-10 hover:transition-all transition-all fill-red-400"/>
                 </a>
-                <a href="https://github.com/cyhdu" class="flex justify-center w-12 h-12">
+                <a href="https://linkedin.com/in/charlie-du-11457021b" class="flex justify-center w-12 h-12">
                     <img src={linkedin} alt="LinkedIn" class="w-8 hover:w-10 hover:transition-all transition-all"/>
                 </a>
-                <a href="https://github.com/cyhdu" class="flex justify-center w-12 h-12">
+                <a href="mailto:charlie7@illinois.edu" class="flex justify-center w-12 h-12">
                     <img src={email} alt="Email" class="w-8 hover:w-10 hover:transition-all transition-all"/>
                 </a>
         </div>
