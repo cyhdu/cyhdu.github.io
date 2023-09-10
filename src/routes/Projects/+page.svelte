@@ -3,7 +3,7 @@
     import { AccordionItem, Accordion } from 'flowbite-svelte';
 
 </script>
-<div class="w-full whole min-h-screen">
+<div class="w-full bg-azure min-h-screen">
     <div class="content p-14 max-w-7xl mx-auto">
         <h1 class="text-5xl align-middle text-center pt-14 font-semibold pb-6"> PROJECTS </h1>
 
@@ -11,7 +11,6 @@
             <AccordionItem open>
               <span slot="header">Projects for Work</span>
                 <BigCard/>
-
             </AccordionItem>
             <AccordionItem>
               <span slot="header">Personal Projects</span>
@@ -26,9 +25,3 @@
 
     </div>
 </div>
-
-<style>
-    .whole {
-        background-color: var(--primary);
-    }
-</style>

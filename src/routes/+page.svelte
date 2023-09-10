@@ -26,7 +26,7 @@
 
 </script>
 
-<div class="w-full whole">
+<div class="w-full bg-azure">
     <div class="waves h-screen">
         <Canvas>
             <Scene shouldRender={playing} {nightMode}/>
@@ -80,13 +80,8 @@
 </div>
 
 <style>
-    .whole {
-        background-color: var(--primary);
-    }
-
     .waves {
         min-height: 45em;
         background-color: var(--primary);
     }
-
 </style>

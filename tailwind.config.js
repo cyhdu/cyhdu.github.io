@@ -4,7 +4,9 @@ export default {
   plugins: [require('flowbite/plugin')],
   theme: {
     extend: {},
+    colors: {
+      'azure': '#f0ffff'
+    }
   },
-  plugins: [],
 }
 
