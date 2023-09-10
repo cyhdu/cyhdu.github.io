@@ -2,6 +2,7 @@
     // import '/src/styles/app.scss';
     import {page} from '$app/stores';
     import {base} from '$app/paths';
+    console.log(base)
 </script>
 <header>
     <!-- <h3> This is my header </h3> -->
