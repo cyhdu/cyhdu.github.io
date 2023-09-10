@@ -1,6 +1,7 @@
 <script lang="ts">
     // import '/src/styles/app.scss';
     import {page} from '$app/stores';
+    import {base} from '$app/paths';
 </script>
 <header>
     <!-- <h3> This is my header </h3> -->
@@ -11,16 +12,16 @@
         </svg>
         <ul>
             <li aria-current={$page.url.pathname === '/' ? 'page' : undefined}>
-                <a href="/">Home</a>
+                <a href="{base}/">Home</a>
             </li>
             <li aria-current={$page.url.pathname === '/Projects' ? 'page' : undefined}>
-                <a href="/Projects">Projects</a>
+                <a href="{base}/Projects">Projects</a>
             </li>
             <li aria-current={$page.url.pathname === '/Blog' ? 'page' : undefined}>
-                <a href="/Blog">Blog</a>
+                <a href="{base}/Blog">Blog</a>
             </li>
             <li aria-current={$page.url.pathname === '/About' ? 'page' : undefined}>
-                <a href="/About">About</a>
+                <a href="{base}/About">About</a>
             </li>
         </ul>
         <!-- <svg viewBox="0 0 2 3" aria-hidden="true">
