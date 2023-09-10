@@ -19,6 +19,7 @@ const config = {
 			strict: true
 		}),
 		paths: {
+			assets: dev ? '' : process.env.BASE_PATH,
 			base: dev ? '' : process.env.BASE_PATH,
 		}
 	}
