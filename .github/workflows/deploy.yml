@@ -22,9 +22,9 @@ jobs:
 
 
       - name: Install Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v3.8.1
         with:
-          node-version: 20
+          node-version: 20.6.0
           cache: npm
 
 
@@ -34,7 +34,7 @@ jobs:
 
       - name: build
         env:
-          BASE_PATH: '/your-repo-name'
+          BASE_PATH: '/cyhdu.github.io'
         run: |
           npm run build
           touch build/.nojekyll
