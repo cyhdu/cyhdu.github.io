@@ -14,11 +14,11 @@
             </AccordionItem>
             <AccordionItem>
               <span slot="header">Personal Projects</span>
-                <BigCard imleft={false}/>
+                <BigCard/>
             </AccordionItem>
             <AccordionItem>
               <span slot="header">Class Projects</span>
-                <BigCard imleft={false}/>
+                <BigCard/>
             </AccordionItem>
           </Accordion>
  
