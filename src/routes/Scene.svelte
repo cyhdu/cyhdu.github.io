@@ -3,7 +3,6 @@
     import { FogExp2, Color } from 'three'
     import { basicVert, fragTest } from '$lib/test.glsl';
     import {uniforms} from './stores'
-    import '/src/styles/app.scss'
 
 
 
@@ -26,7 +25,8 @@
 
     export let shouldRender: boolean = false;
     export let nightMode: boolean = false;
-    const {frameloop} = useThrelte();
+    const {frameloop, useLegacyLights} = useThrelte();
+    useLegacyLights.set(false)
 
     
     // uniforms.update((u) => {

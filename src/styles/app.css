@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* pre {
+    margin: 1em;
+    padding: 1em;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    border-radius: 8px;
+} */
+/* 
+blockquote {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 40px;
+    margin-inline-end: 40px;
+    padding: 8px;
+    background-color: white;
+    border: 1px solid;
+    border-radius: 8px;
+} */
+
+/* TODO MAKE THESE TAILWIND CUSTOM COMPONENTS LIKE IMG */

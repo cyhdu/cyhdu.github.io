@@ -1,14 +1,13 @@
 <script lang="ts">
-    import github from '$lib/images/github2.svg';
-    import linkedin from '$lib/images/linkedIn.svg';
-    import email from '$lib/images/email.svg';
-    import '/src/styles/app.css'
+    const github = '/images/github2.svg';
+    const linkedin = '/images/linkedIn.svg';
+    const email = '/images/email.svg';
 </script>
 
-<footer class="pt-10 px-6">
+<footer class="pt-10 px-6 bg-azure">
     <hr class=" border-gray-200 h-px my-6 sm:mx-auto"/>
     <div class="py-6 pt-0 md:flex md:items-center md:justify-between">
-        <span class="text-md text-gray-500 dark:text-gray-300 sm:text-center">© 2023 Charlie Du LLC. All rights reserved.</span>
+        <span class="text-md text-gray-500 dark:text-gray-300 sm:text-center"></span>
         <!-- Again, cringe -->
         <div class="flex mt-4 space-x-0 sm:justify-center md:mt-0">
                 <a href="https://github.com/cyhdu" class="flex justify-center w-12 h-12">
@@ -24,12 +23,3 @@
     </div>
 
 </footer>
-
-<style>
-
-    footer {
-        background: rgb(240,255,255);
-        /* background: linear-gradient(180deg, rgba(240,255,255,1) 10%, rgba(94,190,237,1) 56%, rgba(9,152,221,1) 100%); */
-    }
-
-</style>
