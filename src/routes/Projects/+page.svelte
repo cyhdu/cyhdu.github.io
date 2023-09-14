@@ -12,7 +12,6 @@
     const work: Post[] = data.posts.filter(post => post.meta.category == "Work")
     const personal: Post[] = data.posts.filter(post => post.meta.category == "Personal")
     const school: Post[] = data.posts.filter(post => post.meta.category == "School")
-    console.log(work)
 
 
     for (const post in data.posts) {

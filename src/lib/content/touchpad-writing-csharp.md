@@ -7,6 +7,6 @@ description: |-
     An app primarily used to read absolute touch postion from a laptop trackpad. 
     Input can be fed to a handwriting recognition model or used to move the mouse.
     Written in C# and .NET
-preview: /images/posts/touchpad-writing-csharp/touchpad.png
+preview: images/posts/touchpad-writing-csharp/touchpad.png
 category: Personal
 ---

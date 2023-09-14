@@ -6,6 +6,6 @@ date: "2023-09-14"
 description: |-
     A boating simulator that I worked on as an intern at the Brunswick iJet lab.
     This was brought the Consumer Electronic Show in Las Vegas, which I attended as an exhibitor
-preview: /images/posts/ces-2023-boating-simulator/CESPhoto.jpg
+preview: images/posts/ces-boating-simulator/CESPhoto.jpg
 category: Work
 ---

@@ -41,6 +41,9 @@ const config = {
 		paths: {
 			assets: dev ? '' : process.env.BASE_PATH,
 			base: dev ? '' : process.env.BASE_PATH,
+		},
+		prerender: {
+			handleHttpError: 'warn'
 		}
 	}
 };
