@@ -3,7 +3,7 @@
     import {page} from '$app/stores';
     import {base} from '$app/paths';
 </script>
-<header>
+<header class="z-50">
     <!-- <h3> This is my header </h3> -->
     <!-- <h2> There are many like it but this one is mine </h2> -->
     <nav>

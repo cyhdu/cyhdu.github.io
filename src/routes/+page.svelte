@@ -48,9 +48,9 @@
                 Charlie Du
             </h1>
             <!-- Fix text wrapping -->
-            <p class="text-black font-sans font-semibold text-2xl">
+            <!-- <p class="text-black font-sans font-semibold text-2xl">
                 CG Software Developer.  Problem Solver.  Visionary.
-            </p>
+            </p> -->
             <!-- Figure out better way to anchor right -->
             <a href="/About" class="text-slate-800 float-right font-sans font-medium">
                 Learn More -&gt
