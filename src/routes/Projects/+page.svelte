@@ -1,6 +1,6 @@
 <script lang="ts">
     import type { Post } from '$lib/types'
-	import BigCard from "../../lib/components/BigCard.svelte";
+	import BigCard from "$lib/components/BigCard.svelte";
     import { AccordionItem, Accordion } from 'flowbite-svelte';
 
     export let data
@@ -37,5 +37,5 @@
                 <BigCard {post}/>
             {/each}
         </AccordionItem>
-        </Accordion>
+    </Accordion>
 </div>
