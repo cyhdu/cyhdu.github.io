@@ -13,7 +13,7 @@
 
 
     <div class="w-full flex flex-col md:flex-row justify-center items-center">
-        <img src="images/CESSign.jpg" class="rounded-full h-80 p-12"/>
+        <img src="images/AboutPicture.jpg" class="rounded-full h-80 p-3"/>
         <div class="flex flex-col p-8">
             <p class="indent-8"> 
                 Hi, I'm Charlie! I'm a junior in Computer Science at the University
@@ -28,34 +28,40 @@
             </p>
             <p class="indent-8 pt-4"> 
                 Outside of work and school I like learning about new things. My current obsession is
-                learning Rust to rewrite some old projects. I'm also a huge keyboard nerd and 
-                headphone collector.
+                learning Rust to rewrite some old projects. I also love outdoor activities like hiking and playing frisbee.
+            </p>
+            <p class="indent-8 pt-4"> 
+                Feel free to get in touch with me using the buttons in the footer!
             </p>
         </div>
     </div>
 
-    <h1 class="text-3xl align-middle text-center pt-6 font-semibold pb-3"> LEARN MORE </h1>
+    <!-- <h1 class="text-3xl align-middle text-center pt-6 font-semibold pb-3"> LEARN MORE </h1> -->
 
-    <hr class="w-1/6 mx-auto mb-3 h-1 bg-gray-300 border-0 rounded"/>
+    <!-- <hr class="w-1/6 mx-auto mb-3 h-1 bg-gray-300 border-0 rounded"/> -->
     
-    <div class="w-full">
-    <Accordion flush multiple>
-        <AccordionItem>
-            <span slot="header">Coursework</span>
+    <!-- <div class="w-full">
+        <Accordion flush multiple>
+            <AccordionItem>
+                <span slot="header">Coursework</span>
 
 
 
-        </AccordionItem>
-        <AccordionItem>
-            <span slot="header">Achievements</span>
+            </AccordionItem>
+            <AccordionItem>
+                <span slot="header">Achievements</span>
 
 
-        </AccordionItem>
-    </Accordion>
-    </div>
+            </AccordionItem>
+        </Accordion>
+    </div> -->
 
     <div class="flex justify-center pt-6">
-        <a class="text-xl font-wemibold pb-3" href="Resume.pdf">View my resume</a>
+        <a class="text-xl font-semibold pb-3" href="Resume.pdf">
+            <div class="bg-white p-4 rounded-lg">
+                View my resume
+            </div>
+        </a>
     </div>
 
 </div>
