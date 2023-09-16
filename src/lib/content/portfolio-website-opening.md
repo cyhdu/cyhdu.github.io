@@ -9,17 +9,3 @@ description: |-
 preview: images/posts/portfolio-website-opening/BlogCeption.png
 category: Personal
 ---
-
-# Content to come
-This is a test of tailwind prose.
-Hopefully it looks pretty normal. However, i think the headings are too chunky
-## Heading 2
-How bout them apples
-
->Maybe a block
->>Or two???
-
-```python
-string = "Spicy little python script"
-print(string)
-```
