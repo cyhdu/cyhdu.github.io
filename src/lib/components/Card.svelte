@@ -9,9 +9,9 @@
         <img class="rounded-t-lg w-full h-72 object-cover" src={post.meta.preview} alt=""/>
     </a>
     <div class="p-5 h-100">
-        <a href = {post.path}>
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{post.meta.project_title}</h5>
-        </a>
+        <!-- <a href = {post.path}> -->
+        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{post.meta.project_title}</h5>
+        <!-- </a> -->
         <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{post.meta.blurb}</p>
         <a href = {post.path} class="block text-right text-lg font-medium text-black hover:text-gray-500 hover:font-semibold">
             Read more -&gt
@@ -25,9 +25,9 @@
         <img class="rounded-t-lg w-full h-72 object-cover" src='/images/focal.webp' alt=""/>
     </a>
     <div class="p-5 h-100">
-        <a href = "">
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Placeholder Title</h5>
-        </a>
+        <!-- <a href = ""> -->
+        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Placeholder Title</h5>
+        <!-- </a> -->
         <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Placeholder description</p>
         <a href = "" class="block text-right text-lg font-medium text-black hover:text-gray-500 hover:font-semibold">
             Read more -&gt
