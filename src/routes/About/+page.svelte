@@ -32,7 +32,6 @@
 
 
     <div class="w-full flex flex-col md:flex-row justify-center items-center">
-        <img src="images/AboutPicture.jpg" class="rounded-full h-80 p-3"/>
         <div class="flex flex-col p-8">
             <p class="indent-8"> 
                 Hi, I'm Charlie! I'm a junior in Computer Science at the University
