@@ -4,7 +4,7 @@
     const email = '/images/email.svg';
 </script>
 
-<footer class="pt-10 px-6 bg-azure">
+<footer class="pt-10 px-6 grad-foot">
     <hr class=" border-gray-200 h-px my-6 sm:mx-auto"/>
     <div class="py-6 pt-0 md:flex md:items-center md:justify-between">
         <span class="text-md text-gray-500 dark:text-gray-300 sm:text-center"></span>

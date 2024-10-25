@@ -34,15 +34,15 @@
     <div class="w-full flex flex-col md:flex-row justify-center items-center">
         <div class="flex flex-col p-8">
             <p class="indent-8"> 
-                Hi, I'm Charlie! I'm a junior in Computer Science at the University
+                Hi, I'm Charlie! I'm a senior in Computer Science at the University
                 of Illinois Urbana-Champaign. I'm interested in all kinds of programming,
                 but currently am taking classes with a focus in system design and architecture.
             </p>
             <p class="indent-8 pt-4">
                 I also work part-time at the Brunswick iJet lab as a CG Software Developer.
                 My work revolves around bringing the future to life in Unreal Engine.
-                Last year, we made a boating simulator that showcased autonomous features.
-                I had the opportunity to attend the Consumer Electronics Show last year to show it off!
+                The last few years, we have made a boating simulator that showcased autonomous features.
+                I have had the opportunity to attend the Consumer Electronics Show multiple times over the last few years to show it off!
             </p>
             <p class="indent-8 pt-4"> 
                 Outside of work and school I like learning about new things. My current obsession is
@@ -76,7 +76,7 @@
                         </p>
 
                         <a href="https://researchpark.illinois.edu/article/2023-intern-awards-showcase-talent-at-research-park/"
-                           class="text-gray-800 py-2 mt-3">
+                           class="text-gray-800 py-2 mt-3 underline">
                             Learn more about the Research Park Intern Awards
                         </a>
                     </div>

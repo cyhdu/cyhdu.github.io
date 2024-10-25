@@ -2,6 +2,7 @@
     import type { Post } from '$lib/types'
 	import BigCard from "$lib/components/BigCard.svelte";
     import { AccordionItem, Accordion } from 'flowbite-svelte';
+	import YtEmbed from '../../lib/components/YTEmbed.svelte';
 
     export let data
 
@@ -18,20 +19,20 @@
     <hr class="w-1/4 mx-auto mb-3 h-1 bg-gray-300 border-0 rounded"/>
 
     <Accordion flush multiple>
-        <AccordionItem open>
+        <AccordionItem open class="font-medium text-xl">
             <span slot="header">Projects for Work</span>
 
             {#each work as post}
                 <BigCard {post}/>
             {/each}
         </AccordionItem>
-        <AccordionItem>
+        <AccordionItem class="font-medium text-xl">
             <span slot="header">Personal Projects</span>
             {#each personal as post}
                 <BigCard {post}/>
             {/each}
         </AccordionItem>
-        <AccordionItem>
+        <AccordionItem class="font-medium text-xl">
             <span slot="header">Class Projects</span>
             {#each school as post}
                 <BigCard {post}/>

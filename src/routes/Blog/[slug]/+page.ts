@@ -6,7 +6,7 @@ export async function load({ params }) {
     // const meta = post.metadata;
     // console.log(post)
     // const content = await import(`./lib/content/${params.slug}.md`)
-    const content = await import(`./../../../lib/content/${params.slug}.md`)
+    const content = await import(`./../../../lib/content/${params.slug}.svx`)
 
     return {
         meta: content.metadata,

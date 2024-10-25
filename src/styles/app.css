@@ -23,3 +23,11 @@ blockquote {
 } */
 
 /* TODO MAKE THESE TAILWIND CUSTOM COMPONENTS LIKE IMG */
+
+.grad {
+  background: linear-gradient(#f0ffff, #ccf1fa);
+}
+
+.grad-foot {
+    background: linear-gradient(#ccf1fa, #94d9f7);
+}

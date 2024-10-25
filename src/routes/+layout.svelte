@@ -6,7 +6,7 @@
 
 <Header />
 <!-- If header blocks content, add a h-8 spacer at top of {slot} -->
-<div class="w-full bg-azure min-h-screen">
+<div class="w-full grad min-h-screen">
     <slot/>
 </div>
 

@@ -12,7 +12,7 @@ const config = {
 	preprocess: [
 		vitePreprocess(),
 		mdsvex({
-			extensions: ['.md'],
+			extensions: ['.md','.svx'],
 			layout: './src/lib/components/mdsvex.svelte',
 			smartypants: true,
 			highlight: {
@@ -27,7 +27,7 @@ const config = {
 		})
 	],
 
-	extensions: ['.svelte', '.md'],
+	extensions: ['.svelte', '.md','.svx'],
 
 	kit: {
 		// adapter-auto only supports some environments, see https://kit.svelte.dev/docs/adapter-auto for a list.

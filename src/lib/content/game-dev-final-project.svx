@@ -1,0 +1,66 @@
+---
+project_title: Game Dev Project
+title: Game Development Project
+blurb: My final project for the Game Development course at UIUC
+date: "2024-05-30"
+description: |-
+    A plane simulator with realistic physics. Final project for CS 415: Game Development at UIUC. Developed in a group where I was responsible for core gameplay mechanics.
+preview: /images/posts/game-dev-final-project/415fp_thumb.png
+category: School
+basedir: /images/posts/game-dev-final-project
+---
+<script>
+    import { Youtube } from 'svelte-youtube-lite';
+    import YTEmbed from "$lib/components/YTEmbed.svelte";
+</script>
+This spring I finally got to take the game development class here at UIUC. It was a lot of fun, and by the end of it, we were assigned to create a whole game as a group.
+In my group, I had the most experience with Unreal, so I took the lead. A few months before the project was assigned, I had seen a clip of Ace Combat 7 that I thought was the coolest thing ever.
+
+<YTEmbed id='3Fhzhxybgos'/>
+
+Obviously, the background music of "Free Bird" made the video a whole lot cooler, but this was the basic inspiration for the project I pitched to my team: a basic flight combat simulator.
+A game that enables you to perform impossible feats in an aircraft.
+
+## Limiting Scope
+Comparing whatever we could create in just 6 short weeks to a game like Ace Combat 7 is just asking for trouble. It was important to be realistic in how much we could achieve with the time we had.
+We decided on a small list of core features, like movement, a weapons system, and objectives, to implement. Afterwards, if we had time, we could add things like enemy variants and visual effects. By defining these early on in the project, we were able to complete the project on time to a level we were happy with.
+
+## Version Control
+One big hurdle we had to overcome from the very beginning of the project was dealing with version control. Since we were working with Unreal, all files are stored as .uasset binary files, which makes
+diffing and merging with Git practically impossible. Git LFS fixes a lot of the issues with Git, but there's a limit of 1GB of storage for free. From my work with Brunswick, I knew that 1GB would not be enough.
+Perforce, the version control software I used at Brunswick, has more complicated licensing. However, for up to 5 users, it's "free". Perforce has a lot of hosting options like Azure or their own Helix Core Cloud, but those aren't free. Hosting your own server is free, and gives you access to 5 accounts. The only downside is that
+you need to figure out how to host it yourself.
+
+In my case, I set up an old laptop as a Perforce Server. Hosting the server on an old computer worked well, but it was only accessible on my local network.
+Gaining access to my local network from outside is both complicated and dangerous, so to avoid all that, I set up a small ZeroTier network to give my groupmates access to the server.
+
+## Physics
+With all the basic setup out of the way, we could start implementing features. My main contributions were the physics of the plane movement, and the weapons system.
+For the physics, I followed this fantastic series of [blog posts](https://vazgriz.com/346/flight-simulator-in-unity3d-part-1/) from VazGriz about implementing a flight simulator in Unity.
+The blog posts made the math of airplane flight a lot easier to understand, but translating code to Unreal requires significant work. Unity has a very easy to access fixed update loop.
+This is the perfect place to put physics calculations because it ensures that physics results are consistent regardless of framerate. Unfortunately, Unreal, by design, does not provide an 
+easy to access fixed update like Unity. 
+
+I tried to implement everything using Unreal's normal tick function, but between Unreal using centimeters for everything (gravity is 980 instead of 9.8) and the feeling that something was going to break, my initial implementation felt off. Epic Games did introduce an Asynchronous Physics Tick with Unreal Engine 5, but actually getting access to it seemed insanely complicated.
+
+This [plugin](https://github.com/Mr-Craig/AsyncTickPhysics) from Mr-Craig gives easy access to Asychronous Physics functions, and after a lot of tweaking, I finally got flight working and feeling correct.
+<video width="600" height="500" autoplay muted loop>
+    <source src="{basedir}/flight.mp4" type="video/mp4">
+    Your browser does not support the video tag
+</video>
+
+
+## Object Pooling
+For the weapons system, I wanted to add a cannon like the ones on the A-10 Warthog. The naive way to implement this would to just spawn new "bullet" actors when a key is held. Each actor would be responsible for destroying itself. However, the constant creation and destruction of actors could lead to a performance drop. The solution is to "pool" the actors.
+In this case, this means that when the game starts, we create many bullet actors, and hide them. When we press the "fire" input, instead of spawning new bullets, we use one of the hidden bullets.
+Then, when that bullet is done being used, instead of destroying itself, it simply hides itself. This specific bullet actor is then ready to be used again later.
+<video width="600" height="500" autoplay muted loop>
+    <source src="{basedir}/object_pool.mp4" type="video/mp4">
+    Your browser does not support the video tag
+</video>
+At this rate of fire, there are only about 60 bullets in flight at any given time. This means for the upfront cost of spawning 60 bullets when the game starts, we can use the bullets freely for the rest of the game with no concerns for performance.
+
+## Next Steps
+My groupmates each designed their own levels with different objectives and themes. We have some levels that are time trials to test your ability to maneuver the plane. Others are combat oriented, and test how well you can aim the cannon.
+I'm super happy with how the project turned out. We accomplished everything in our list of core features, and almost finished all of our extra features.
+I think this project is a great base to build off of, and at some point, I will come back and expand on it. One of my ideas is to turn it from a singleplayer plane flight simulator into a multiplayer dogfighting simulator. 
