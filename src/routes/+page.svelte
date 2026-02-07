@@ -7,8 +7,8 @@
     export let data;
 
     const p1 = data.posts.find(post => post.meta.project_title == "CES 2023")
-    const p2 = data.posts.find(post => post.meta.project_title == "Portfolio Website")
-    const p3 = data.posts.find(post => post.meta.project_title == "Game Dev Project")
+    const p2 = data.posts.find(post => post.meta.project_title == "Flight Simulation Game")
+    const p3 = data.posts.find(post => post.meta.project_title == "Agricultural SLAM")
 
     let elem;
     let playing: boolean = true;
@@ -28,7 +28,7 @@
 
 
 </script>
-<div class="waves h-screen">
+<div class="waves h-screen w-screen relative">
     <Canvas>
         <Scene shouldRender={playing} {nightMode}/>
     </Canvas>
@@ -41,9 +41,9 @@
         Light/Dark
     </label> -->
     {#if displayed}
-    <div class="absolute top-1/2 left-28 max-w-7xl mx-auto">
-        <div class="w-fit px-14" in:typewriter={{ delay: 0, speed: 30 }}>
-            <h1 class="text-black font-sans font-bold text-7xl">
+    <div class="absolute top-1/2 left-10 sm:left-28 md:left-40 max-w-7xl mx-auto">
+        <div class="w-fit" in:typewriter={{ delay: 0, speed: 30 }}>
+            <h1 class="text-black font-sans font-bold text-5xl md:text-7xl">
                 Charlie Du
             </h1>
             <!-- Fix text wrapping -->
@@ -61,11 +61,11 @@
 </div>
 
 <div class="w-full grad min-h-full">
-    <div class="content p-14 max-w-7xl mx-auto ">
-        <h2 class="text-slate-600 font-sans font-semibold text-5xl">
+    <div class="content p-4 sm:p-10 max-w-7xl mx-auto ">
+        <h2 class="text-slate-600 font-sans font-semibold text-3xl text-center md:text-left md:text-4xl">
             I love learning about new things
         </h2>
-        <h2 class="text-slate-500 font-sans font-semibold text-xl pt-4">
+        <h2 class="text-slate-500 font-sans font-semibold text-l text-center md:text-left md:text-xl pt-4">
             Check out some of my projects.
         </h2>
 

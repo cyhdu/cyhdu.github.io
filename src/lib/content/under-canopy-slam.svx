@@ -1,0 +1,62 @@
+---
+project_title: Agricultural SLAM 
+title: Radar-First SLAM for GPS-Denied Crop Fields 
+blurb: A robust localization pipeline for autonomous agricultural robotics
+date: "2025-12-09" 
+description: |- 
+    A research project focused on developing a radar-first, GPS-denied SLAM pipeline. Designed to provide 
+    high-precision localization for autonomous robots operating under dense crop canopies where traditional GPS signals often fail. 
+preview: /images/posts/ag-slam/robot.png
+category: School
+basedir: /images/posts/ag-slam
+---
+
+#### This project was developed in a group for CS598 Digital Agriculture at the University of Illinois at Urbana-Champaign.
+In the field of agricultural robotics, autonomy promises to revolutionize farming. From precision planting to automated harvesting,
+there are many reasons to pursue autonomy on the farm. There are two major paradigms in this space: having a few large and expensive 
+tractors, or many small and cheap robots. Companies like John Deere and Sabanto pursue the large tractor model, while smaller startups 
+and research typically focuses on smaller robots.
+
+For the researchers, the small robot approach presents a dilemma. When a robot enters a field of high-growth crops, it enters a 
+GPS-denied environment. The dense canopy acts as a natural shield, scattering satellite signals and leaving conventional navigation 
+systems blind. To solve this, we developed a radar-first SLAM (Simultaneous Localization and Mapping) pipeline designed to provide 
+high-fidelity positioning where other sensors fail.
+
+## The GPS-Denied Dilemma
+![]({basedir}/RowImage.png)
+Imagine a robot tasked with monitoring crop health in a large cornfield. When the corn is in the early growth stages, the sky is clearly
+visible, and GPS positioning works as intended. As the crops grow, GPS becomes less and less reliable because the satellite signals struggle
+to penetrate the leaves. As the satellite signal becomes weaker, the robot will begin relying on localized sensors to determine its position.
+However, IMUs, wheel speed sensors, and others can only work for so long before the perceived location starts drifting away from the real 
+location. This drift accumulates over time, and eventually could lead to the robot damaging the crops or itself. Correcting for drift can be
+done simply by "resetting" the robot's estimated position to a known location. Typically this is done using GPS, but that was not an option 
+for us.
+
+## The Solution
+To give our robot this known global location, we developed a radar-first SLAM pipeline. SLAM is widely used in autonomy, so it was a natural
+choice for us. However, a **very** important consideration was our sensor. In an agricultural context, we cannot rely on typical SLAM sensors
+like LiDAR or cameras due to the potential for dust, fog, rain, or vegitation to occlude the sensors. We decided to use mmWave Radar due to its 
+ability to remain useful in these conditions. As an added benefit, it would even work at night!
+
+## The Pipeline
+![]({basedir}/DataPipeline.png)
+1. Radar Signal Processing: We converted raw ADC samples into a range-Doppler map, using a Capon spatial spectrum for precise azimuth 
+estimation.
+2. Point Cloud Filtering: In a crop canopy, many radar returns come from moving leaves and thin stalks. To filter these out, we use
+Doppler-based static/dynamic seperation. Points that move faster than some threshold are ignored.
+3. Radar Odometry (ICP): We aligned consecutive scans using a 2D Iterative Closest Point (ICP) algorithm. This provided a dead-reckoning 
+stream that stayed stable even when the ground was uneven.
+4. Sensor Fusion (EKF): We fused the radar odometry with high-frequency IMU data using an Extended Kalman Filter (EKF) to ensure smooth 
+transitions and high-fidelity heading data.
+5. Occupancy Mapping: The final output was a global Log-Odds Occupancy Grid, which was then used for real-time row detection and path 
+planning.
+
+The result of this pipeline is that the robot was able to follow the row geometry without any obvious drift over a typical row of crops.
+As expected, it also performed well with obstructions and in low light.
+
+![]({basedir}/obstacleMap.png)
+
+## Future Work
+Although the performance was visually good, we were not able to get ground truth path to comparea against. We can integrate a GPS signal
+to acompilsh this. In addition, we only used an IMU for additional sensors. We can integrate wheel odometry, camera, and LiDAR as well to
+improve our movement estimation.

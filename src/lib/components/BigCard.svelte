@@ -6,13 +6,13 @@
 </script>
 
 
-<div class="px-3 py-6 max-w-7xl">
+<div class="md:px-3 py-6 max-w-7xl">
 
     {#if post}
     <a href = {post.path} class="w-5/6 h-full mx-auto flex flex-col md:flex-row items-center rounded-lg">
 
         <img class="shadow object-cover w-80 rounded-lg h-72 flex-none" src = {post.meta.preview}/>
-        <div class="flex flex-col justify-between p-4 leading-normal w-full">
+        <div class="flex flex-col justify-between py-2 md:p-4 leading-normal w-full">
             <p class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"> {post.meta.project_title} </p>
             <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{post.meta.description}</p>
         </div>

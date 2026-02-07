@@ -1,7 +1,7 @@
 ---
-project_title: Game Dev Project
-title: Game Development Project
-blurb: My final project for the Game Development course at UIUC
+project_title: Flight Simulation Game
+title: Flight Simulation Game
+blurb: A plane simulator featuring real aerodynamic equations
 date: "2024-05-30"
 description: |-
     A plane simulator with realistic physics. Final project for CS 415: Game Development at UIUC. Developed in a group where I was responsible for core gameplay mechanics.
@@ -16,7 +16,7 @@ basedir: /images/posts/game-dev-final-project
 This spring I finally got to take the game development class here at UIUC. It was a lot of fun, and by the end of it, we were assigned to create a whole game as a group.
 In my group, I had the most experience with Unreal, so I took the lead. A few months before the project was assigned, I had seen a clip of Ace Combat 7 that I thought was the coolest thing ever.
 
-<YTEmbed id='3Fhzhxybgos'/>
+    <YTEmbed id='3Fhzhxybgos'/>
 
 Obviously, the background music of "Free Bird" made the video a whole lot cooler, but this was the basic inspiration for the project I pitched to my team: a basic flight combat simulator.
 A game that enables you to perform impossible feats in an aircraft.
@@ -44,20 +44,24 @@ easy to access fixed update like Unity.
 I tried to implement everything using Unreal's normal tick function, but between Unreal using centimeters for everything (gravity is 980 instead of 9.8) and the feeling that something was going to break, my initial implementation felt off. Epic Games did introduce an Asynchronous Physics Tick with Unreal Engine 5, but actually getting access to it seemed insanely complicated.
 
 This [plugin](https://github.com/Mr-Craig/AsyncTickPhysics) from Mr-Craig gives easy access to Asychronous Physics functions, and after a lot of tweaking, I finally got flight working and feeling correct.
-<video width="600" height="500" autoplay muted loop>
-    <source src="{basedir}/flight.mp4" type="video/mp4">
-    Your browser does not support the video tag
-</video>
+<div class="w-full flex">
+    <video width="600" height="500" class="mx-auto my-0" autoplay muted loop>
+        <source src="{basedir}/flight.mp4" type="video/mp4">
+        Your browser does not support the video tag
+    </video>
+</div>
 
 
 ## Object Pooling
 For the weapons system, I wanted to add a cannon like the ones on the A-10 Warthog. The naive way to implement this would to just spawn new "bullet" actors when a key is held. Each actor would be responsible for destroying itself. However, the constant creation and destruction of actors could lead to a performance drop. The solution is to "pool" the actors.
 In this case, this means that when the game starts, we create many bullet actors, and hide them. When we press the "fire" input, instead of spawning new bullets, we use one of the hidden bullets.
 Then, when that bullet is done being used, instead of destroying itself, it simply hides itself. This specific bullet actor is then ready to be used again later.
-<video width="600" height="500" autoplay muted loop>
-    <source src="{basedir}/object_pool.mp4" type="video/mp4">
-    Your browser does not support the video tag
-</video>
+<div class="w-full flex">
+    <video width="600" height="500" class="mx-auto my-2" autoplay muted loop>
+        <source src="{basedir}/object_pool.mp4" type="video/mp4">
+        Your browser does not support the video tag
+    </video>
+</div>
 At this rate of fire, there are only about 60 bullets in flight at any given time. This means for the upfront cost of spawning 60 bullets when the game starts, we can use the bullets freely for the rest of the game with no concerns for performance.
 
 ## Next Steps
